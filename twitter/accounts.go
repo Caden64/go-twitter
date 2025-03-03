@@ -58,9 +58,9 @@ func (s *AccountService) UpdateProfile(params *AccountUpdateProfileParams) (*Use
 }
 
 type AccountsUpdateProfileImageParams struct {
-	image           string `url:"image"`
-	includeEntities *bool  `url:"include_entities,omitempty"`
-	skipStatus      *bool  `url:"skip_status,omitempty"`
+	Image           string `url:"image"`
+	IncludeEntities *bool  `url:"include_entities,omitempty"`
+	SkipStatus      *bool  `url:"skip_status,omitempty"`
 }
 
 func (s *AccountService) UpdateProfileImage(params *AccountsUpdateProfileImageParams) (*User, *http.Response, error) {
@@ -71,11 +71,11 @@ func (s *AccountService) UpdateProfileImage(params *AccountsUpdateProfileImagePa
 }
 
 type AccountsUpdateProfileBannerParams struct {
-	banner     string `url:"image"`
-	width      int    `url:"width,omitempty"`
-	height     int    `url:"height,omitempty"`
-	offsetLeft int    `url:"offset_left,omitempty"`
-	offsetTop  int    `url:"offset_top,omitempty"`
+	Banner     string `url:"image"`
+	Width      int    `url:"width,omitempty"`
+	Height     int    `url:"height,omitempty"`
+	OffsetLeft int    `url:"offset_left,omitempty"`
+	OffsetTop  int    `url:"offset_top,omitempty"`
 }
 
 func (s *AccountService) UpdateProfileBanner(params *AccountsUpdateProfileBannerParams) (*User, *http.Response, error) {
