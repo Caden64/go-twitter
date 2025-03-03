@@ -2,7 +2,6 @@
 
 **DEPRECATED** As of Nov 2022, the go-twitter API library is no longer being developed. If you fork this repo, please remove the logo since it is not covered by the license.
 
-<img align="right" src="https://storage.googleapis.com/dghubble/gopher-on-bird.png">
 
 go-twitter is a Go client library for the [Twitter API](https://dev.twitter.com/rest/public). Check the [usage](#usage) section or try the [examples](/examples) to see how to access the Twitter API.
 
