@@ -56,3 +56,31 @@ func (s *AccountService) UpdateProfile(params *AccountUpdateProfileParams) (*Use
 	resp, err := s.sling.New().Post("update_profile.json").QueryStruct(params).Receive(user, apiError)
 	return user, resp, relevantError(err, *apiError)
 }
+
+type AccountsUpdateProfileImageParams struct {
+	image           string `url:"image"`
+	includeEntities *bool  `url:"include_entities,omitempty"`
+	skipStatus      *bool  `url:"skip_status,omitempty"`
+}
+
+func (s *AccountService) UpdateProfileImage(params *AccountsUpdateProfileImageParams) (*User, *http.Response, error) {
+	user := new(User)
+	apiError := new(APIError)
+	resp, err := s.sling.New().Get("update_profile_image.json").QueryStruct(params).Receive(user, apiError)
+	return user, resp, relevantError(err, *apiError)
+}
+
+type AccountsUpdateProfileBannerParams struct {
+	banner     string `url:"image"`
+	width      int    `url:"width,omitempty"`
+	height     int    `url:"height,omitempty"`
+	offsetLeft int    `url:"offset_left,omitempty"`
+	offsetTop  int    `url:"offset_top,omitempty"`
+}
+
+func (s *AccountService) UpdateProfileBanner(params *AccountsUpdateProfileBannerParams) (*User, *http.Response, error) {
+	user := new(User)
+	apiError := new(APIError)
+	resp, err := s.sling.New().Post("update_profile_banner.json").QueryStruct(params).Receive(user, apiError)
+	return user, resp, relevantError(err, *apiError)
+}
